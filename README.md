@@ -1,4 +1,4 @@
-# ExprPlatform
+# SharedPlatform
 开发环境：`IntelliJ IDEA CE`
 
 编译方法：`Build` -> `Build Artifacts` -> `Build`
