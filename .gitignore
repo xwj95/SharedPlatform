@@ -1,4 +1,5 @@
 .DS_Store
 data/
 out/
+sh/cmd/
 

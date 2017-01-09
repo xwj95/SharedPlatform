@@ -59,9 +59,9 @@ public class ExpPlatform {
 	}
 
 	public boolean startTask() {
-		sensor.startLog("XWJ", "Task1");
-		capacity.startLog("XWJ", "Task1");
-		touchevent.startLog("XWJ", "Task1");
+		sensor.startLog("XWJ", "Task" + (tasks.currentTask + 1));
+		capacity.startLog("XWJ", "Task" + (tasks.currentTask + 1));
+		touchevent.startLog("XWJ", "Task" + (tasks.currentTask + 1));
 		return true;
 	}
 

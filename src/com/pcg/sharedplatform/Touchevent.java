@@ -43,7 +43,6 @@ public class Touchevent implements Runnable {
 			else {
 				command = "cmd /c adb shell sh sdcard/touch.sh " + userName + " " + taskName;
 			}
-			System.out.println(command);
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
 		} catch (IOException e) {
