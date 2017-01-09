@@ -13,9 +13,9 @@ public class Collector {
 		try {
 			String command;
 			if (platform.isUnix) {
-				command = "sh sh/touch.sh " + userName;
+				command = "sh sh/collect.sh " + userName;
 			} else {
-				command = "cmd /c sh/touch.bat " + userName;
+				command = "cmd /c sh/collect.bat " + userName;
 			}
 			Process ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();

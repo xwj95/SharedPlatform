@@ -5,6 +5,7 @@ import java.io.IOException;
 public class ExpPlatform {
 	public static boolean isUnix = true;
 	public static Controller controller;
+	public static Collector collector;
 	public static Server server;
 
 	public String phoneType;
@@ -28,6 +29,7 @@ public class ExpPlatform {
 		}
 		tasks = new Tasks();
 		server = new Server(controller);
+		collector = new Collector(this);
 		sensor = new Sensor(this);
 		capacity = new Capacity(this);
 		touchevent = new Touchevent(this);
@@ -87,8 +89,9 @@ public class ExpPlatform {
 	public boolean nextTask() {
 		tasks.next();
 		if (tasks.isFinished()) {
-			tasks.init();
+			collector.collect(userName);
 			controller.setInstruction(Tasks.finishInstruction);
+			tasks.init();
 			return false;
 		}
 		controller.setInstruction(tasks.getCurrentInstruction());
