@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 class ServerReadThread extends Thread {
-	Server server;
-	BufferedReader in;
+	private Server server;
+	private BufferedReader in;
 
 	public ServerReadThread(Server server, BufferedReader in) {
 		this.server = server;
@@ -39,12 +39,12 @@ class ServerReadThread extends Thread {
 }
 
 public class Server extends Thread {
-	Controller controller;
-	ServerSocket servSock;
-	Map<String, Socket> ipToSocket;
+	private Controller controller;
+	private ServerSocket servSock;
+	private Map<String, Socket> ipToSocket;
 
-	BufferedReader in;
-	DataOutputStream out;
+	private BufferedReader in;
+	private DataOutputStream out;
 
 	public Server(Controller ctrl) {
 		super();
