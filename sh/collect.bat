@@ -1,8 +1,11 @@
-userName=%1
-set directory=sdcard\ExpData
-adb pull %directory%\%userName%
-if not exist "data\%userName%" (
-	mkdir data\${userName}
+set userName=%1
+set directory=sdcard/ExpData
+adb pull %directory%/%userName%
+if not exist "data" (
+	mkdir data
 )
-xcopy /e %userName%\ data\%userName%
-rd /r /q %userName%\
+if not exist "data\%userName%" (
+	mkdir data\%userName%
+)
+xcopy /E /Y %userName% data\%userName%
+rd /S /Q %userName%

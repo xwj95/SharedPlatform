@@ -15,7 +15,7 @@ public class Collector {
 			if (platform.isUnix) {
 				command = "sh sh/collect.sh " + userName;
 			} else {
-				command = "cmd /c sh/collect.bat " + userName;
+				command = "cmd /c sh\\collect.bat " + userName;
 			}
 			Process ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
