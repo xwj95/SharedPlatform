@@ -21,7 +21,7 @@
       <JFXComboBox fx:id="clientIps" layoutX="439.0" layoutY="461.0" prefHeight="27.0" prefWidth="139.0" />
       <JFXButton fx:id="connectNet" layoutX="589.0" layoutY="461.0" text="连接网络" />
       <JFXButton fx:id="disconnectNet" layoutX="669.0" layoutY="461.0" text="断开网络" />
-      <JFXButton fx:id="startExpr" layoutX="589.0" layoutY="491.0" text="开始实验" />
+      <JFXButton fx:id="startExpr" layoutX="669.0" layoutY="491.0" text="开始实验" />
       <Label fx:id="instruction" layoutX="25.0" layoutY="79.0" text="">
          <font>
             <Font name="System Font" size="22.0" />
@@ -30,9 +30,11 @@
       <JFXButton fx:id="startButton" layoutX="123.0" layoutY="411.0" text="开始当前任务" />
       <JFXButton fx:id="nextButton" layoutX="309.0" layoutY="411.0" text="下一步" />
       <JFXButton fx:id="retryButton" layoutX="452.0" layoutY="411.0" text="重做当前任务" />
-      <JFXButton fx:id="exprChooser" layoutX="669.0" layoutY="491.0" text="选择实验" />
+      <JFXButton fx:id="exprChooser" layoutX="589.0" layoutY="491.0" text="选择实验" />
       <JFXToggleButton fx:id="phoneType" layoutX="391.0" layoutY="505.0" text="手机类型" />
       <Label layoutX="353.0" layoutY="526.0" text="长岛" />
-      <Label layoutX="522.0" layoutY="526.0" text="小v" />
+      <Label layoutX="522.0" layoutY="526.0" text="小V" />
+      <Label layoutX="599.0" layoutY="416.0" text="用户姓名" />
+      <JFXTextField fx:id="userName" layoutX="659.0" layoutY="411.0" maxWidth="103.0" minWidth="103.0" prefHeight="33.0" prefWidth="103.0" text="" />
    </children>
 </AnchorPane>

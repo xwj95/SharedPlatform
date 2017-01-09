@@ -44,6 +44,8 @@ public class Controller implements Initializable {
 	public JFXTextField portInput;
 	@FXML
 	public JFXComboBox<String> clientIps;
+	@FXML
+	public JFXTextField userName;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -66,6 +68,7 @@ public class Controller implements Initializable {
 				nextButton.setDisable(false);
 				clientIps.setDisable(true);
 				phoneType.setDisable(true);
+				userName.setDisable(true);
 			};
 		});
 
@@ -89,6 +92,7 @@ public class Controller implements Initializable {
 					exprChooser.setDisable(false);
 					phoneType.setDisable(false);
 					clientIps.setDisable(false);
+					userName.setDisable(false);
 					nextButton.setDisable(true);
 					startButton.setDisable(true);
 					retryButton.setDisable(true);
@@ -126,6 +130,10 @@ public class Controller implements Initializable {
 
 	public void setInstruction(String inst) {
 		instruction.setText(inst);
+	}
+
+	public String getUserName() {
+		return userName.getText();
 	}
 
 	public String getPhoneType() {

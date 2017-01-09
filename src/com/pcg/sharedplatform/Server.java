@@ -26,6 +26,10 @@ class ServerReadThread extends Thread {
 		while (true) {
 			try {
 				message = in.readLine();
+				if (message == null) {
+					System.out.println("Client disconnected");
+					break;
+				}
 				System.out.println(message);
 			} catch (IOException e) {
 				e.printStackTrace();

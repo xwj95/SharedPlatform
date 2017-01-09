@@ -64,21 +64,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2930#2931#0" expanded="true" />
-                <element signature="e#2956#2957#0" expanded="true" />
-                <element signature="e#3000#3001#0" expanded="true" />
                 <element signature="e#3032#3033#0" expanded="true" />
-                <element signature="e#3375#3376#0" expanded="true" />
-                <element signature="e#3409#3410#0" expanded="true" />
-                <element signature="e#3453#3454#0" expanded="true" />
-                <element signature="e#3488#3489#0" expanded="true" />
+                <element signature="e#3058#3059#0" expanded="true" />
+                <element signature="e#3102#3103#0" expanded="true" />
+                <element signature="e#3134#3135#0" expanded="true" />
+                <element signature="e#3166#3167#0" expanded="true" />
+                <element signature="e#3198#3199#0" expanded="true" />
+                <element signature="e#3541#3542#0" expanded="true" />
+                <element signature="e#3575#3576#0" expanded="true" />
+                <element signature="e#3619#3620#0" expanded="true" />
+                <element signature="e#3654#3655#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,7 +88,7 @@
       <file leaf-file-name="Tasks.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Tasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
+            <state relative-caret-position="112">
               <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -99,30 +100,18 @@
       <file leaf-file-name="ExpPlatform.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/ExpPlatform.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
+            <state relative-caret-position="930">
+              <caret line="62" column="49" lean-forward="true" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Capacity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Capacity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="173" column="37" lean-forward="false" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+            <state relative-caret-position="-413">
+              <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,6 +133,7 @@
     <findStrings>
       <find>controller</find>
       <find>reTry</find>
+      <find>8000</find>
       <find>Stage</find>
     </findStrings>
   </component>
@@ -166,24 +156,24 @@
         <option value="$PROJECT_DIR$/src/com.pcg.sharedplatform/Controller.java" />
         <option value="$PROJECT_DIR$/src/com.pcg.sharedplatform/Touchevent.java" />
         <option value="$PROJECT_DIR$/src/com.pcg.sharedplatform/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/ui.fxml" />
         <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Platform.java" />
         <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Task.java" />
-        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Controller.java" />
         <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Tasks.java" />
-        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Touchevent.java" />
-        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/ExpPlatform.java" />
-        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Sensor.java" />
         <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Capacity.java" />
+        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Touchevent.java" />
+        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Sensor.java" />
+        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/ui.fxml" />
+        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Controller.java" />
+        <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/ExpPlatform.java" />
         <option value="$PROJECT_DIR$/src/com/pcg/sharedplatform/Server.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="130" />
-    <option name="y" value="116" />
+    <option name="x" value="138" />
+    <option name="y" value="27" />
     <option name="width" value="1144" />
     <option name="height" value="873" />
   </component>
@@ -247,6 +237,28 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="sharedplatform" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharedPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SharedPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sharedplatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -549,7 +561,7 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="130" y="116" width="1144" height="873" extended-state="0" />
+    <frame x="138" y="27" width="1144" height="873" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -817,14 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="60" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Platform.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -841,21 +845,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/ui.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Touchevent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        <state relative-caret-position="382">
+          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -864,48 +857,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Sensor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="195">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#119#120#0" expanded="false" />
-            <element signature="e#148#149#0" expanded="false" />
-            <element signature="e#309#310#0" expanded="false" />
-            <element signature="e#354#355#0" expanded="false" />
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/ExpPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="69" column="23" lean-forward="false" selection-start-line="69" selection-start-column="23" selection-end-line="69" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Capacity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="173" column="37" lean-forward="false" selection-start-line="173" selection-start-column="37" selection-end-line="173" selection-end-column="37" />
+        <state relative-caret-position="315">
+          <caret line="139" column="13" lean-forward="true" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Server.java">
+    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="100" column="5" lean-forward="true" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        <state relative-caret-position="330">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#662#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/ui.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="23" column="46" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding>
+            <element signature="e#3032#3033#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
+            <element signature="e#3102#3103#0" expanded="true" />
+            <element signature="e#3134#3135#0" expanded="true" />
+            <element signature="e#3166#3167#0" expanded="true" />
+            <element signature="e#3198#3199#0" expanded="true" />
+            <element signature="e#3541#3542#0" expanded="true" />
+            <element signature="e#3575#3576#0" expanded="true" />
+            <element signature="e#3619#3620#0" expanded="true" />
+            <element signature="e#3654#3655#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Tasks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
+        <state relative-caret-position="112">
           <caret line="43" column="21" lean-forward="false" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -913,20 +927,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/ExpPlatform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="930">
+          <caret line="62" column="49" lean-forward="true" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/pcg/sharedplatform/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-413">
+          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2930#2931#0" expanded="true" />
-            <element signature="e#2956#2957#0" expanded="true" />
-            <element signature="e#3000#3001#0" expanded="true" />
-            <element signature="e#3032#3033#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3409#3410#0" expanded="true" />
-            <element signature="e#3453#3454#0" expanded="true" />
-            <element signature="e#3488#3489#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -5,9 +5,10 @@ import java.io.IOException;
 public class ExpPlatform {
 	public static boolean isUnix = true;
 	public static Controller controller;
-	public static String phoneType;
 	public static Server server;
 
+	public String phoneType;
+	public String userName;
 	public Tasks tasks;
 	public Sensor sensor;
 	public Capacity capacity;
@@ -53,15 +54,24 @@ public class ExpPlatform {
 			return false;
 		}
 		phoneType = controller.getPhoneType();
+		userName = controller.getUserName();
+		if ((userName == null) || (userName.isEmpty())) {
+			controller.messageBox("未输入用户名！");
+			return false;
+		}
+		if (userName.indexOf(' ') >= 0) {
+			controller.messageBox("用户名中不能包含空格！");
+			return false;
+		}
 		server.startClient(controller.getSelectedClient());
-		server.writeClient("name|XWJ");
+		server.writeClient("name|" + userName);
 		return true;
 	}
 
 	public boolean startTask() {
-		sensor.startLog("XWJ", "Task" + (tasks.currentTask + 1));
-		capacity.startLog("XWJ", "Task" + (tasks.currentTask + 1));
-		touchevent.startLog("XWJ", "Task" + (tasks.currentTask + 1));
+		sensor.startLog(userName, "task" + (tasks.currentTask + 1));
+		capacity.startLog(userName, "task" + (tasks.currentTask + 1));
+		touchevent.startLog(userName, "task" + (tasks.currentTask + 1));
 		return true;
 	}
 
