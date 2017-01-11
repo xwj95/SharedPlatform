@@ -8,11 +8,11 @@ pattern = '^\[\s+(\d+\.\d+)\]\s+/dev/input/([a-z0-9/]*).*\s+([A-Z_]+)\s+([0-9a-f
 phoneType = 'victoria'
 dataType = 'touch'
 
-def getStartTimestamp(dir, task):
-	timestamp_filename = dir + '/time_' + task + '.txt'
+def getTaskTimestamp(dir, task):
+	timestamp_filename = os.path.join(dir, 'time_' + task + '.txt')
 	timestamp_file = open(timestamp_filename)
 	lines = timestamp_file.readlines()
-	return int(lines[2])
+	return int(lines[2]), int(lines[4])
 
 def getInitTouchevent():
 	touch_event = {
@@ -45,8 +45,8 @@ if __name__ == '__main__':
 	argv = sys.argv
 	dir = argv[1]
 	task = os.path.basename(dir)
-	startTimestampNs = getStartTimestamp(dir, task)
-	touch_filename = dir + '/touch_' + task + '.txt'
+	startTimestampNs, finishTimestampNs = getTaskTimestamp(dir, task)
+	touch_filename = os.path.join(dir, 'touch_' + task + '.txt')
 	touch_file = open(touch_filename)
 	touch_event = getInitTouchevent()
 	touch_events = getInitTouchevents()
@@ -55,6 +55,8 @@ if __name__ == '__main__':
 	for line in touch_file:
 		k = re.match(pattern, line)
 		if (k):
+			if (int(float(k.groups()[0]) * 1000000) > finishTimestampNs / 1000):
+				break
 			time = int((int(float(k.groups()[0]) * 1000000) - startTimestampNs / 1000) / 1000)
 			device = k.groups()[1]
 			event = k.groups()[2]
@@ -154,3 +156,4 @@ if __name__ == '__main__':
 					assert(False)
 			else:
 				assert(False)
+	touch_file.close()

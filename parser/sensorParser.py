@@ -10,7 +10,7 @@ if __name__ == '__main__':
 	argv = sys.argv
 	dir = argv[1]
 	task = os.path.basename(dir)
-	sensor_filename = dir + '/sensor_' + task + '.txt'
+	sensor_filename = os.path.join(dir, 'sensor_' + task + '.txt')
 	sensor_file = open(sensor_filename)
 	for line in sensor_file:
 		values = map(str, line.split())
@@ -24,4 +24,4 @@ if __name__ == '__main__':
 		message = str(time) + ',' + phoneType + ',' + dataTypes[type] + ','
 		message += ';'.join(values[3:dataValues[type] + 3])
 		print message
-		# print values[3:dataValues[type] + 3]
+	sensor_file.close()

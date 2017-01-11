@@ -1,1 +1,1 @@
-python capacityParser.py $1 > capacityParse.txt;python touchParser.py $1 > touchParse.txt;python sensorParser.py $1 > sensorParse.txt;cat capacityParse.txt touchParse.txt sensorParse.txt > $1/parse.txt;rm capacityParse.txt touchParse.txt sensorParse.txt;
+python capacityParser.py $1 > capacityParse.txt;python touchParser.py $1 > touchParse.txt;python sensorParser.py $1 > sensorParse.txt;cat capacityParse.txt touchParse.txt sensorParse.txt > $1/parse_${1##*/}.txt;rm capacityParse.txt touchParse.txt sensorParse.txt;

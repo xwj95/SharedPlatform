@@ -8,7 +8,7 @@ phoneType = 'victoria'
 dataType = 'capacity'
 
 def getStartTimestamp(dir, task):
-	timestamp_filename = dir + '/time_' + task + '.txt'
+	timestamp_filename = os.path.join(dir, 'time_' + task + '.txt')
 	timestamp_file = open(timestamp_filename)
 	lines = timestamp_file.readlines()
 	return int(lines[1])
@@ -20,7 +20,7 @@ if __name__ == '__main__':
 	startTimestamp = getStartTimestamp(dir, task)
 	os.system('python thplogParser.py ' + dir)
 	capacity_dir = "capacity_" + task
-	capacity_filename = capacity_dir + '/file.dif'
+	capacity_filename = os.path.join(capacity_dir, 'file.dif')
 	capacity_file = open(capacity_filename)
 	message = ''
 	for line in capacity_file:
@@ -44,4 +44,5 @@ if __name__ == '__main__':
 	if (len(message) > 0) and (time > 0):
 		message += (';'.join(value))
 		print message
+	capacity_file.close()
 	shutil.rmtree(capacity_dir)
