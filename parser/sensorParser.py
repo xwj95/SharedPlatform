@@ -17,7 +17,7 @@ if __name__ == '__main__':
 		if (len(values) < 2):
 			continue
 		type = int(values[0])
-		time = long(values[1])
+		time = int(values[1])
 		accuracy = int(values[2])
 		if (time < 0):
 			continue

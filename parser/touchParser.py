@@ -12,7 +12,7 @@ def getStartTimestamp(dir, task):
 	timestamp_filename = dir + '/time_' + task + '.txt'
 	timestamp_file = open(timestamp_filename)
 	lines = timestamp_file.readlines()
-	return long(lines[2])
+	return int(lines[2])
 
 def getInitTouchevent():
 	touch_event = {
@@ -55,7 +55,7 @@ if __name__ == '__main__':
 	for line in touch_file:
 		k = re.match(pattern, line)
 		if (k):
-			time = long((long(float(k.groups()[0]) * 1000000) - startTimestampNs / 1000) / 1000)
+			time = int((int(float(k.groups()[0]) * 1000000) - startTimestampNs / 1000) / 1000)
 			device = k.groups()[1]
 			event = k.groups()[2]
 			value = k.groups()[3]
