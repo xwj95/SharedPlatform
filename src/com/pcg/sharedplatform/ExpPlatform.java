@@ -89,8 +89,8 @@ public class ExpPlatform {
 	public boolean nextTask() {
 		tasks.next();
 		if (tasks.isFinished()) {
-			collector.collect(userName);
 			controller.setInstruction(Tasks.finishInstruction);
+//			collector.collect(userName);
 			tasks.init();
 			return false;
 		}

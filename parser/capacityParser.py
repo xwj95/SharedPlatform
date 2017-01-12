@@ -19,7 +19,7 @@ if __name__ == '__main__':
 	task = os.path.basename(dir)
 	startTimestamp = getStartTimestamp(dir, task)
 	os.system('python thplogParser.py ' + dir)
-	capacity_dir = "capacity_" + task
+	capacity_dir = 'capacity_' + task
 	capacity_filename = os.path.join(capacity_dir, 'file.dif')
 	capacity_file = open(capacity_filename)
 	message = ''

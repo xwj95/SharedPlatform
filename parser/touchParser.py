@@ -58,6 +58,8 @@ if __name__ == '__main__':
 			if (int(float(k.groups()[0]) * 1000000) > finishTimestampNs / 1000):
 				break
 			time = int((int(float(k.groups()[0]) * 1000000) - startTimestampNs / 1000) / 1000)
+			if (time < 0):
+				continue
 			device = k.groups()[1]
 			event = k.groups()[2]
 			value = k.groups()[3]
