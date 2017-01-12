@@ -23,5 +23,5 @@ if __name__ == '__main__':
 			continue
 		message = str(time) + ',' + phoneType + ',' + dataTypes[type] + ','
 		message += ';'.join(values[3:dataValues[type] + 3])
-		print message
+		print(message)
 	sensor_file.close()

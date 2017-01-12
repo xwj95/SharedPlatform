@@ -35,7 +35,7 @@ def getInitTouchevents():
 def printTouchevent(touch_event):
 	message = str(touch_event['time']) + ',' + phoneType + ',' + dataType + ','
 	message += touch_event['type'] + ';' + str(touch_event['id']) + ';' + str(touch_event['x']) + ';' + str(touch_event['y'])
-	print message
+	print(message)
 
 def printTouchevents(touch_events):
 	for id, touch_event in touch_events.items():
@@ -89,7 +89,6 @@ if __name__ == '__main__':
 				elif (value == 'DOWN'):
 					for id, touch_event in touch_events.items():
 						if (id not in last_touch_events) or (last_touch_events[id]['type'] == 'up'):
-							# print 'down'
 							touch_events[id]['type'] = 'down'
 				else:
 					assert(False)
@@ -133,6 +132,11 @@ if __name__ == '__main__':
 					pass
 				else:
 					assert(False)
+			elif (event == 'KEY_RIGHT'):
+				if (value == 'UP'):
+					pass
+				elif (value == 'DOWN'):
+					pass
 			elif (event == 'KEY_VOLUMEDOWN'):
 				if (value == 'UP'):
 					pass
@@ -155,5 +159,5 @@ if __name__ == '__main__':
 				else:
 					assert(False)
 			else:
-				assert(False)
+				# assert(False)
 	touch_file.close()

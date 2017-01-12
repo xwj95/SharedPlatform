@@ -28,7 +28,7 @@ if __name__ == '__main__':
 		if (k):
 			if (len(message) > 0) and (time > 0):
 				message += (';'.join(value))
-				print message
+				print(message)
 			time = int(k.groups()[0]) - startTimestamp
 			noise = int(k.groups()[1])
 			notify = k.groups()[2]
@@ -43,6 +43,6 @@ if __name__ == '__main__':
 			value.append(';'.join(values))
 	if (len(message) > 0) and (time > 0):
 		message += (';'.join(value))
-		print message
+		print(message)
 	capacity_file.close()
 	shutil.rmtree(capacity_dir)
