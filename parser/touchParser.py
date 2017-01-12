@@ -159,5 +159,6 @@ if __name__ == '__main__':
 				else:
 					assert(False)
 			else:
+				pass
 				# assert(False)
 	touch_file.close()

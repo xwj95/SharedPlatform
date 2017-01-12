@@ -13,7 +13,7 @@ if __name__ == '__main__':
 	sensor_filename = os.path.join(dir, 'sensor_' + task + '.txt')
 	sensor_file = open(sensor_filename)
 	for line in sensor_file:
-		values = map(str, line.split())
+		values = list(map(str, line.split()))
 		if (len(values) < 2):
 			continue
 		type = int(values[0])

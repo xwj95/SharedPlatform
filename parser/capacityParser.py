@@ -39,7 +39,7 @@ if __name__ == '__main__':
 			message = str(time) + ',' + phoneType + ',' + dataType + ','
 			value = list()
 		else:
-			values = map(str, line.split())
+			values = list(map(str, line.split()))
 			value.append(';'.join(values))
 	if (len(message) > 0) and (time > 0):
 		message += (';'.join(value))
