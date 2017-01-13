@@ -28,6 +28,7 @@ class ServerReadThread extends Thread {
 				message = in.readLine();
 				if (message == null) {
 					System.out.println("Client disconnected");
+					server.controller.messageBox("客户端断开！");
 					break;
 				}
 				System.out.println(message);
@@ -39,7 +40,7 @@ class ServerReadThread extends Thread {
 }
 
 public class Server extends Thread {
-	private Controller controller;
+	public Controller controller;
 	private ServerSocket servSock;
 	private Map<String, Socket> ipToSocket;
 
