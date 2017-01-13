@@ -134,6 +134,11 @@ if __name__ == '__main__':
 					pass
 				else:
 					assert(False)
+			elif (event == 'KEY_LEFT'):
+				if (value == 'UP'):
+					pass
+				elif (value == 'DOWN'):
+					pass
 			elif (event == 'KEY_RIGHT'):
 				if (value == 'UP'):
 					pass

@@ -8,8 +8,7 @@ public class Sensor {
 	}
 
 	public void startLog(String userName, String taskName, String instruction, String tag) {
-		String message = "task|" + taskName;
-//		String message = "task|" + taskName + "#" + instruction.replace('\n', '$') + "#" + tag.replace('\n', '$');
+		String message = "task|" + taskName + "#" + instruction.replace('\n', '$') + "#" + tag;
 		platform.server.writeClient(message);
 	}
 

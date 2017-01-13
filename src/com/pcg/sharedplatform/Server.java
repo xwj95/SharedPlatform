@@ -2,10 +2,7 @@ package com.pcg.sharedplatform;
 
 import javafx.application.Platform;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -33,6 +30,7 @@ class ServerReadThread extends Thread {
 				}
 				System.out.println(message);
 			} catch (IOException e) {
+				server.controller.messageBox("客户端断开！");
 				e.printStackTrace();
 			}
 		}
@@ -45,7 +43,7 @@ public class Server extends Thread {
 	private Map<String, Socket> ipToSocket;
 
 	private BufferedReader in;
-	private DataOutputStream out;
+	private BufferedWriter out;
 
 	public Server(Controller ctrl) {
 		super();
@@ -86,8 +84,8 @@ public class Server extends Thread {
 
 	public void startClient(String ip) {
 		try {
-			out = new DataOutputStream(ipToSocket.get(ip).getOutputStream());
-			in = new BufferedReader(new InputStreamReader(ipToSocket.get(ip).getInputStream(), "UTF-8"));
+			out = new BufferedWriter(new OutputStreamWriter(ipToSocket.get(ip).getOutputStream()));
+			in = new BufferedReader(new InputStreamReader(ipToSocket.get(ip).getInputStream()));
 			ServerReadThread thread = new ServerReadThread(this, in);
 			thread.start();
 		} catch (IOException e) {
@@ -99,7 +97,7 @@ public class Server extends Thread {
 		try {
 			System.out.println(message);
 			out.flush();
-			out.writeUTF(message);
+			out.write(message + '\n');
 			out.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
