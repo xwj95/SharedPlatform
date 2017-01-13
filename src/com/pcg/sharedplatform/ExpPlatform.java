@@ -71,7 +71,7 @@ public class ExpPlatform {
 	}
 
 	public boolean startTask() {
-		sensor.startLog(userName, "task" + (tasks.currentTask + 1));
+		sensor.startLog(userName, "task" + (tasks.currentTask + 1), tasks.getCurrentInstruction(), tasks.getCurrentTag());
 		capacity.startLog(userName, "task" + (tasks.currentTask + 1));
 		touchevent.startLog(userName, "task" + (tasks.currentTask + 1));
 		return true;

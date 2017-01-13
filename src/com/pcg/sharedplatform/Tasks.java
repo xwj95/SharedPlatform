@@ -75,7 +75,7 @@ public class Tasks {
 				System.out.println("Message: " + message);
 				String[] message_split = message.split("\\|");
 				if (message_split.length >= 2) {
-					Task task = new Task(message_split[0].replace('$', '\n'), message_split[1]);
+					Task task = new Task(message_split[0].replace('$', '\n'), message_split[1].replace('$', '\n'));
 					taskList.add(task);
 				}
 			}

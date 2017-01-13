@@ -86,7 +86,7 @@ public class Server extends Thread {
 	public void startClient(String ip) {
 		try {
 			out = new DataOutputStream(ipToSocket.get(ip).getOutputStream());
-			in = new BufferedReader(new InputStreamReader(ipToSocket.get(ip).getInputStream()));
+			in = new BufferedReader(new InputStreamReader(ipToSocket.get(ip).getInputStream(), "UTF-8"));
 			ServerReadThread thread = new ServerReadThread(this, in);
 			thread.start();
 		} catch (IOException e) {
@@ -96,6 +96,7 @@ public class Server extends Thread {
 
 	public void writeClient(String message) {
 		try {
+			System.out.println(message);
 			out.flush();
 			out.writeUTF(message);
 			out.flush();

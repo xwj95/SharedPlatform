@@ -134,12 +134,12 @@ class CapacityDataThread_LittleV {
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
 			if (platform.isUnix) {
-				command = "adb shell set `ls -t data/log/dmd_log/`; "
+				command = "adb shell set `ls -t data/log/dmd_log/ | grep '^logtofile'`; "
 						+ "cp data/log/dmd_log/$1 sdcard/ExpData/" + userName + "/" + taskName + "; "
 						+ "mv sdcard/ExpData/" + userName + "/" + taskName + "/$1 sdcard/ExpData/" + userName + "/" + taskName + "/capacity_" + taskName + ".thplog";
 			}
 			else {
-				command = "cmd /c adb shell set `ls -t data/log/dmd_log/`; "
+				command = "cmd /c adb shell set `ls -t data/log/dmd_log/ | grep '^logtofile'``; "
 						+ "cp data/log/dmd_log/$1 sdcard/ExpData/" + userName + "/" + taskName + "; "
 						+ "mv sdcard/ExpData/" + userName + "/" + taskName + "/$1 sdcard/ExpData/" + userName + "/" + taskName + "/capacity_" + taskName + ".thplog";
 			}

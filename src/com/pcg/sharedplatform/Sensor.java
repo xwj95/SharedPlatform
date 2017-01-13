@@ -7,8 +7,10 @@ public class Sensor {
 		platform = expPlatform;
 	}
 
-	public void startLog(String userName, String taskName) {
-		platform.server.writeClient("task|" + taskName);
+	public void startLog(String userName, String taskName, String instruction, String tag) {
+		String message = "task|" + taskName;
+//		String message = "task|" + taskName + "#" + instruction.replace('\n', '$') + "#" + tag.replace('\n', '$');
+		platform.server.writeClient(message);
 	}
 
 	public void stopLog() {

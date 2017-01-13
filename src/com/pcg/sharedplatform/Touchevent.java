@@ -52,6 +52,7 @@ public class Touchevent implements Runnable {
 			return;
 		}
 		System.out.println("ToucheventThread - unexpected finish");
+		platform.controller.messageBox("adb连接断开！");
 	}
 
 	public void startLog(String userName, String taskName) {
