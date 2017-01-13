@@ -73,34 +73,33 @@ public class Controller implements Initializable {
 		});
 
 		startButton.setOnMouseClicked(event -> {
-			if (platform.startTask()) {
-				startButton.setDisable(true);
-				nextButton.setDisable(false);
-				retryButton.setDisable(false);
-			}
+			startButton.setDisable(true);
+			nextButton.setDisable(false);
+			retryButton.setDisable(false);
+			platform.startTask();
 		});
 
 		nextButton.setOnMouseClicked(event -> {
-			if (platform.stopTask()) {
-				if (platform.nextTask()) {
-					nextButton.setDisable(true);
-					startButton.setDisable(false);
-					retryButton.setDisable(true);
-				}
-				else {
-					startExpr.setDisable(false);
-					exprChooser.setDisable(false);
-					phoneType.setDisable(false);
-					clientIps.setDisable(false);
-					userName.setDisable(false);
-					nextButton.setDisable(true);
-					startButton.setDisable(true);
-					retryButton.setDisable(true);
-				}
+			platform.stopTask();
+			if (platform.nextTask()) {
+				startButton.setDisable(false);
+				nextButton.setDisable(true);
+				retryButton.setDisable(true);
+			}
+			else {
+				startExpr.setDisable(false);
+				exprChooser.setDisable(false);
+				phoneType.setDisable(false);
+				clientIps.setDisable(false);
+				userName.setDisable(false);
+				nextButton.setDisable(true);
+				startButton.setDisable(true);
+				retryButton.setDisable(true);
 			}
 		});
 
 		retryButton.setOnMouseClicked(event -> {
+			nextButton.setDisable(false);
 			platform.retryTask();
 		});
 
@@ -110,6 +109,9 @@ public class Controller implements Initializable {
 			File file = fileChooser.showOpenDialog(retryButton.getScene().getWindow());
 			if (file != null) {
 				platform.tasks.loadTasks(file);
+				if (!platform.tasks.isLoaded()) {
+					messageBox("未选择实验！");
+				}
 			}
 			else {
 				messageBox("实验序列文件不存在！");
@@ -158,6 +160,10 @@ public class Controller implements Initializable {
 
 	public void addWaitingClient(String ip) {
 		clientIps.getItems().add(ip);
+	}
+
+	public void disableNext() {
+		nextButton.setDisable(true);
 	}
 
 	public void messageBox(String message) {

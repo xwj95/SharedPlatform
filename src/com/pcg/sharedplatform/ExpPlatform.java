@@ -79,9 +79,9 @@ public class ExpPlatform {
 
 	public boolean stopTask() {
 		if (tasks.isStarted()) {
-			sensor.stopLog();
-			capacity.stopLog();
 			touchevent.stopLog();
+			capacity.stopLog();
+			sensor.stopLog();
 		}
 		return true;
 	}

@@ -72,7 +72,7 @@ public class Tasks {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
 				String message = scanner.nextLine();
-				System.out.println("Message: " + message);
+				System.out.println("Task: " + message);
 				String[] message_split = message.split("\\|");
 				if (message_split.length >= 2) {
 					Task task = new Task(message_split[0].replace('$', '\n'), message_split[1].replace('$', '\n'));

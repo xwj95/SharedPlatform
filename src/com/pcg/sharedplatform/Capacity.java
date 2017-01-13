@@ -1,11 +1,6 @@
 package com.pcg.sharedplatform;
 
-import javafx.application.Platform;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 class CapacityDataThread_LongIsland implements Runnable {
 	private ExpPlatform platform;
@@ -103,6 +98,18 @@ class CapacityDataThread_LittleV {
 			}
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
+			String line;
+			BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+			while ((line = input.readLine()) != null){
+				System.out.println(line);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		try {
+			String command;
 			if (platform.isUnix) {
 				command = "adb shell sh sdcard/capacity_LittleV.sh " + userName + " " + taskName;
 			}
@@ -111,6 +118,16 @@ class CapacityDataThread_LittleV {
 			}
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
+			String line;
+			BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+			while ((line = input.readLine()) != null) {
+				System.out.println(line);
+				if (line.startsWith("detect")) {
+					platform.controller.messageBox("电容数据采集失败，\n请不要触摸手机，\n并重试当前任务！");
+					platform.controller.disableNext();
+				}
+			}
+			System.out.println("CapacityDataThread_LittleV Start");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
@@ -119,7 +136,6 @@ class CapacityDataThread_LittleV {
 		running = true;
 		ps.destroy();
 		ps = null;
-		System.out.println("CapacityDataThread_LittleV Start");
 	}
 
 	public void finish() {
@@ -133,6 +149,19 @@ class CapacityDataThread_LittleV {
 			}
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
+			String line;
+			BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+			while ((line = input.readLine()) != null) {
+				System.out.println(line);
+			}
+			System.out.println("CapacityDataThread_LittleV Finish");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		try {
+			String command;
 			if (platform.isUnix) {
 				command = "adb shell set `ls -t data/log/dmd_log/ | grep '^logtofile'`; "
 						+ "cp data/log/dmd_log/$1 sdcard/ExpData/" + userName + "/" + taskName + "; "
@@ -145,6 +174,11 @@ class CapacityDataThread_LittleV {
 			}
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
+			String line;
+			BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+			while ((line = input.readLine()) != null){
+				System.out.println(line);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
@@ -153,7 +187,6 @@ class CapacityDataThread_LittleV {
 		running = false;
 		ps.destroy();
 		ps = null;
-		System.out.println("CapacityDataThread_LittleV Finish");
 	}
 }
 

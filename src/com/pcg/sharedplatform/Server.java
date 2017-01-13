@@ -26,11 +26,13 @@ class ServerReadThread extends Thread {
 				if (message == null) {
 					System.out.println("Client disconnected");
 					server.controller.messageBox("客户端断开！");
+					server.controller.disableNext();
 					break;
 				}
-				System.out.println(message);
+				System.out.println("Message: " + message);
 			} catch (IOException e) {
 				server.controller.messageBox("客户端断开！");
+				server.controller.disableNext();
 				e.printStackTrace();
 			}
 		}

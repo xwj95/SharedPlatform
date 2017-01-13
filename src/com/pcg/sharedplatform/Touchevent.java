@@ -1,9 +1,6 @@
 package com.pcg.sharedplatform;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class Touchevent implements Runnable {
 	private ExpPlatform platform;
@@ -45,6 +42,11 @@ public class Touchevent implements Runnable {
 			}
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
+			String line;
+			BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+			while ((line = input.readLine()) != null) {
+				System.out.println(line);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
@@ -52,7 +54,8 @@ public class Touchevent implements Runnable {
 			return;
 		}
 		System.out.println("ToucheventThread - unexpected finish");
-		platform.controller.messageBox("adb连接断开！");
+		platform.controller.messageBox("adb连接断开！\n请重试当前任务！");
+		platform.controller.disableNext();
 	}
 
 	public void startLog(String userName, String taskName) {
@@ -75,6 +78,11 @@ public class Touchevent implements Runnable {
 			}
 			kill_ps = Runtime.getRuntime().exec(command);
 			kill_ps.waitFor();
+			String line;
+			BufferedReader input = new BufferedReader(new InputStreamReader(kill_ps.getInputStream()));
+			while ((line = input.readLine()) != null) {
+				System.out.println(line);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
