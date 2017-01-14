@@ -168,9 +168,8 @@ class CapacityDataThread_LittleV {
 						+ "mv sdcard/ExpData/" + userName + "/" + taskName + "/$1 sdcard/ExpData/" + userName + "/" + taskName + "/capacity_" + taskName + ".thplog";
 			}
 			else {
-				command = "cmd /c adb shell set `ls -t data/log/dmd_log/ | grep '^logtofile'``; "
-						+ "cp data/log/dmd_log/$1 sdcard/ExpData/" + userName + "/" + taskName + "; "
-						+ "mv sdcard/ExpData/" + userName + "/" + taskName + "/$1 sdcard/ExpData/" + userName + "/" + taskName + "/capacity_" + taskName + ".thplog";
+				System.out.println("Test");
+				command = "cmd /c adb shell sh sdcard/copy_capacity.sh " + userName + " " + taskName;
 			}
 			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
