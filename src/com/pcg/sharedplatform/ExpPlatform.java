@@ -18,7 +18,6 @@ public class ExpPlatform {
 	public ExpPlatform(Controller ctrl) {
 		controller = ctrl;
 		controller.setInstruction(Tasks.startInstruction);
-		controller.setServerIP(Server.getLocalHostIP());
 		if (System.getProperties().getProperty("os.name").startsWith("Windows")) {
 			System.out.println("System: Windows");
 			isUnix = false;
@@ -27,6 +26,7 @@ public class ExpPlatform {
 			System.out.println("System: Unix");
 			isUnix = true;
 		}
+		controller.setServerIP(Server.getLocalHostIP(this));
 		tasks = new Tasks();
 		server = new Server(controller);
 		collector = new Collector(this);

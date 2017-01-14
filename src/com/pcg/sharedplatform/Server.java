@@ -4,10 +4,14 @@ import javafx.application.Platform;
 
 import java.io.*;
 import java.net.InetAddress;
+import java.net.Inet4Address;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.NetworkInterface;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Enumeration;
+
 
 class ServerReadThread extends Thread {
 	private Server server;
@@ -73,11 +77,27 @@ public class Server extends Thread {
 		servSock = new ServerSocket(port);
 	}
 
-	public static String getLocalHostIP() {
+	public static String getLocalHostIP(ExpPlatform platform) {
 		String ip = "";
 		try {
-			InetAddress addr = InetAddress.getLocalHost();
-			ip = addr.getHostAddress();
+			if (platform.isUnix) {
+				InetAddress addr = InetAddress.getLocalHost();
+				ip = addr.getHostAddress();
+			}
+			else {
+				Enumeration<NetworkInterface> nets = NetworkInterface
+						.getNetworkInterfaces();
+				while (nets.hasMoreElements()) {
+					NetworkInterface netinterface = nets.nextElement();
+					Enumeration<InetAddress> inets = netinterface.getInetAddresses();
+					while (inets.hasMoreElements()) {
+						InetAddress inet = inets.nextElement();
+						if (inet instanceof Inet4Address && netinterface.getName().contains("wlan")) {
+							return inet.getHostAddress();
+						}
+					}
+				}
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
