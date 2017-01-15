@@ -2,6 +2,7 @@ package com.pcg.sharedplatform;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -72,6 +73,11 @@ public class Tasks {
 			Scanner scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
 				String message = scanner.nextLine();
+				try {
+					message = new String(message.getBytes(), "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					e.printStackTrace();
+				}
 				System.out.println("Task: " + message);
 				String[] message_split = message.split("\\|");
 				if (message_split.length >= 2) {
