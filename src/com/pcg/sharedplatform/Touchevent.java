@@ -19,20 +19,6 @@ public class Touchevent implements Runnable {
 	@Override
 	public void run() {
 		try {
-			File path = new File("sh/cmd/");
-			if (!path.exists()) {
-				path.mkdir();
-			}
-			FileOutputStream fos = new FileOutputStream(new File("sh/cmd/" + userName + "_" + taskName + ".txt"));
-			String strcmd = "sh sdcard/touch.sh " + userName + " " + taskName;
-			fos.write(strcmd.getBytes());
-			fos.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		try {
 			String command;
 			if (platform.isUnix) {
 				command = "adb shell sh sdcard/touch.sh " + userName + " " + taskName;

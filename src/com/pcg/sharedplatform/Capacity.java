@@ -5,7 +5,8 @@ import java.io.*;
 class CapacityDataThread_LongIsland implements Runnable {
 	private ExpPlatform platform;
 	private volatile Thread thread;
-	private String dirName;
+	private String userName;
+	private String taskName;
 	private Process ps;
 
 	public CapacityDataThread_LongIsland(ExpPlatform expPlatform) {
@@ -16,36 +17,33 @@ class CapacityDataThread_LongIsland implements Runnable {
 	@Override
 	public void run() {
 		try {
-			try {
-				File path = new File("cmd/");
-				if (!path.exists())
-					path.mkdir();
-				FileOutputStream fos = new FileOutputStream(new File("cmd/" + dirName + ".txt"));
-				String strcmd = "cd sdcard\nsh capacity.sh " + dirName;
-				fos.write(strcmd.getBytes());
-				fos.close();
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
+			String command;
+			if (platform.isUnix) {
+				command = "adb shell sh sdcard/capacity_LongIsland.sh " + userName + " " + taskName;
 			}
-
-			try {
-				ps = Runtime.getRuntime().exec("cmd /c adb shell < cmd\\" + dirName + ".txt");
-				ps.waitFor();
-			} catch (IOException e) {
-				e.printStackTrace();
+			else {
+				command = "cmd /c adb shell sh sdcard/capacity_LongIsland.sh " + userName + " " + taskName;
 			}
+			ps = Runtime.getRuntime().exec(command);
+			ps.waitFor();
+			String line;
+			BufferedReader input = new BufferedReader(new InputStreamReader(ps.getInputStream()));
+			while ((line = input.readLine()) != null) {
+				System.out.println(line);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		} catch (InterruptedException e) {
-			System.out.println("CapacityDataThread - successful interrupt");
+			System.out.println("CapacityDataThread_LongIsland - successful interrupt");
 			return;
 		}
-		System.out.println("CapacityDataThread - unexcepted finish");
+		System.out.println("CapacityDataThread_LongIsland - unexcepted finish");
 	}
 
-	public void start(String dirName) {
+	public void start(String userName, String taskName) {
 		if (thread == null) {
-			this.dirName = dirName;
+			this.userName = userName;
+			this.taskName = taskName;
 			thread = new Thread(this);
 			thread.start();
 		}
@@ -56,7 +54,14 @@ class CapacityDataThread_LongIsland implements Runnable {
 		thread.interrupt();
 		thread = null;
 		try {
-			ps = Runtime.getRuntime().exec("cmd /c adb shell kill -9 `cat /sdcard/CapacityData/toBeKilled.pid`");
+			String command;
+			if (platform.isUnix) {
+				command = "adb shell kill -9 `cat sdcard/ExpData/" + userName + "/" + taskName + "/capacity_" + taskName + "/toBeKilled.pid`";
+			}
+			else {
+				command = "cmd /c adb shell kill -9 `cat sdcard/ExpData/" + userName + "/" + taskName + "/capacity_" + taskName + "/toBeKilled.pid`";
+			}
+			ps = Runtime.getRuntime().exec(command);
 			ps.waitFor();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -168,7 +173,6 @@ class CapacityDataThread_LittleV {
 						+ "mv sdcard/ExpData/" + userName + "/" + taskName + "/$1 sdcard/ExpData/" + userName + "/" + taskName + "/capacity_" + taskName + ".thplog";
 			}
 			else {
-				System.out.println("Test");
 				command = "cmd /c adb shell sh sdcard/copy_capacity.sh " + userName + " " + taskName;
 			}
 			ps = Runtime.getRuntime().exec(command);
@@ -205,7 +209,7 @@ public class Capacity {
 		}
 		else if (platform.phoneType.equals("LONGISLAND")) {
 			longIsland = new CapacityDataThread_LongIsland(platform);
-			longIsland.start(userName);
+			longIsland.start(userName, taskName);
 		}
 	}
 
