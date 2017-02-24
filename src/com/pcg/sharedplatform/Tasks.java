@@ -1,8 +1,6 @@
 package com.pcg.sharedplatform;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -70,7 +68,7 @@ public class Tasks {
 		currentTask = -1;
 		taskList = new ArrayList<>();
 		try {
-			Scanner scanner = new Scanner(file);
+			Scanner scanner = new Scanner(new InputStreamReader(new FileInputStream(file)));
 			while (scanner.hasNextLine()) {
 				String message = scanner.nextLine();
 				try {
